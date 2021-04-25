@@ -1,0 +1,12 @@
+parent: classic
+name: aura-theme
+display-name: AURA shop Theme
+version: 1.0.0
+assets:
+  use_parent_assets: true
+  css:
+    all:
+      - id: product-extra-style
+        path: assets/css/custom.css
+        media: all
+        priority: 1000
