@@ -76,12 +76,15 @@
           </div>
         {/block}
 
-        {block name='hook_reassurance'}
-          {hook h='displayReassurance'}
-        {/block}
-
       </div>
 
     </div>
+
+    {block name='hook_reassurance'}
+      {hook h='displayReassurance'}
+    {/block}
+
   </section>
 {/block}
+
+

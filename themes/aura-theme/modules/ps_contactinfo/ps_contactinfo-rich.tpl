@@ -22,47 +22,41 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
-<div class="container">
-  <div class="row row-footer">
-    {block name='hook_footer_before'}
-      {hook h='displayFooterBefore'}
-    {/block}
+
+<div class="contact-rich">
+  <h4>{l s='Store information' d='Shop.Theme.Global'}</h4>
+  <div class="block">
+    <div class="icon"><i class="material-icons">&#xE55F;</i></div>
+    <div class="data">{$contact_infos.address.formatted nofilter}</div>
   </div>
-</div>
-<div class="footer-container">
-
-  <div class="container-fluid">
-
-    <div class="container container-footer-links">
-
-      <div class="row">
-        {block name='hook_footer'}
-          {hook h='displayFooter'}
-        {/block}
-      </div>
-      <div class="row">
-        {block name='hook_footer_after'}
-          {hook h='displayFooterAfter'}
-        {/block}
-      </div>
-
+  {if $contact_infos.phone}
+    <hr/>
+    <div class="block">
+      <div class="icon"><i class="material-icons">&#xE0CD;</i></div>
+      <div class="data">
+        {l s='Call us:' d='Shop.Theme.Global'}<br/>
+        <a href="tel:{$contact_infos.phone}">{$contact_infos.phone}</a>
+       </div>
     </div>
-
-    <div class="copyright-bg">
-
-      <div class="row">
-        <div class="col-md-12">
-          <p class="text-sm-center">
-            {block name='copyright_link'}
-              <a class="_blank" href="https://www.prestashop.com" target="_blank" rel="nofollow">
-                {l s='%copyright% %year% - Ecommerce software by %prestashop%' sprintf=['%prestashop%' => 'PrestaShop™', '%year%' => 'Y'|date, '%copyright%' => '©'] d='Shop.Theme.Global'}
-              </a>
-            {/block}
-          </p>
-        </div>
+  {/if}
+  {if $contact_infos.fax}
+    <hr/>
+    <div class="block">
+      <div class="icon"><i class="material-icons">&#xE0DF;</i></div>
+      <div class="data">
+        {l s='Fax:' d='Shop.Theme.Global'}<br/>
+        {$contact_infos.fax}
       </div>
-
     </div>
-
-  </div>
+  {/if}
+  {if $contact_infos.email && $display_email}
+    <hr/>
+    <div class="block">
+      <div class="icon"><i class="material-icons">&#xE158;</i></div>
+      <div class="data email">
+        {l s='Email us:' d='Shop.Theme.Global'}<br/>
+      </div>
+      <a href="mailto:{$contact_infos.email}">{$contact_infos.email}</a>
+    </div>
+  {/if}
 </div>

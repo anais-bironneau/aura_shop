@@ -31,6 +31,19 @@ h2
     font-weight: 400 !important;
 }
 
+.card-block
+{
+    box-shadow: none;
+    border: none;
+}
+
+.page-not-found
+{
+    box-shadow: none !important;
+    border: 1px solid #EFD5F6 !important;
+    margin-top: 100px !important;
+}
+
 /* HEADER 1  (LOGO AND ICONS) */
 #header
 {
@@ -54,13 +67,13 @@ h2
     color: #88AEDD;
 }
 
-#header .header-nav .blockcart
+#header .header-nav .blockcart, #header .header-nav .cart-preview.active
 {
     background: transparent;
 }
 
-#header .header-nav .cart-preview .shopping-cart {
-
+#header .header-nav .cart-preview .shopping-cart, #header .header-nav .cart-preview.active .shopping-cart
+{
     color: #88AEDD;
     font-size: 2rem;
 }
@@ -85,7 +98,7 @@ h2
 /* HEADER 2 (MAIN MENU) */
 #_desktop_top_menu
 {
-    margin-bottom: auto !important;
+    margin-right: auto !important;
     margin-left: auto !important;
     width: 920px !important;
     display: block !important;
@@ -93,7 +106,35 @@ h2
 
 .top-menu .sub-menu
 {
-    background-color: #ECF6FA;
+    background-color: #EFD5F6;
+}
+
+
+.top-menu a
+{
+    margin-right: 8px;
+    margin-left: 8px;
+    color: #B57CC4 !important;
+    letter-spacing: 4px;
+}
+
+.top-menu a:hover
+{
+    color: #88AEDD !important;
+}
+
+.header-top
+{
+    border-bottom: 2px solid #F6EDF9;
+}
+
+@media (max-width: 767px)
+{
+    #header .header-nav
+    {
+        border-bottom: none;
+        margin-bottom: 0;
+    }
 }
 
 @media (max-width: 1200px)
@@ -171,32 +212,6 @@ h2
     color: #9A7BB7;
 }
 
-.top-menu a
-{
-    margin-right: 15px;
-    color: #B57CC4 !important;
-    letter-spacing: 4px;
-}
-
-.top-menu a:hover
-{
-    color: #88AEDD !important;
-}
-
-.header-top
-{
-    border-bottom: 2px solid #F6EDF9;
-}
-
-@media (max-width: 767px)
-{
-    #header .header-nav
-    {
-        border-bottom: none;
-        margin-bottom: 0;
-    }
-}
-
 .col-currency-selector, .col-language-selector
 {
     float: right;
@@ -212,7 +227,7 @@ h2
 {
     box-shadow: none;
     border: none;
-    background-color: #ECF6FA;
+    background-color: #F6EDF9;
 }
 
 
@@ -232,7 +247,6 @@ h2
     left: 5px;
     right: 5px;
     top: 319px;
-    background-color: #F6EDF9;
 }
 @media (max-width: 1200px) {
     .page-home .carousel
@@ -265,7 +279,7 @@ h2
     margin-bottom: 0;
 }
 
-@media (max-width: 1350px)
+@media (max-width: 1650px)
 {
     #carousel h2
     {
@@ -279,37 +293,12 @@ h2
     }
 }
 
+
 /* FEATURED PRODUCTS */
 .featured-products h2
 {
     font-size: 2rem !important;
     color: #343335 !important;
-}
-
-.featured-products
-{
-    margin-top: 400px;
-}
-@media (max-width: 1700px)
-{
-    .featured-products
-    {
-        margin-top: 330px;
-    }
-}
-@media (max-width: 991px)
-{
-    .featured-products
-    {
-        margin-top: 400px;
-    }
-}
-@media (max-width: 450px)
-{
-    .featured-products
-    {
-        margin-top: 20px;
-    }
 }
 
 /* PRODUCTS MINIATURES STYLES */
@@ -338,7 +327,7 @@ h2
     text-transform: lowercase;
 }
 
-.featured-products .product-flags .discount, .featured-products .product-flags .new, #js-product-list .product-flags .discount, #js-product-list .product-flags .new
+.product-flags .discount, .product-flags .new, .product-flags .discount, .product-flags .new
 {
     border-radius: 50% 20% / 10% 40%;
     background-color: #EFD5F6 !important;
@@ -378,15 +367,17 @@ h2
 
 .breadcrumb span
 {
-    color: #88AEDD;
-    font-weight: 500;
-    font-size: 1.2rem;
+    color: #343335;
+    font-weight: 400;
+    font-size: 1rem;
 }
 
-#left-column div
+#left-column .block-categories, #left-column #search_filters
 {
-    background-color: #ECF6FA;
-    border-radius: 20px;
+    background-color: transparent;
+    border: 1px solid #EFD5F6;
+    box-shadow: none;
+    border-radius: 2px;
     color: #343335;
 }
 
@@ -495,6 +486,388 @@ h2
 }
 
 
+/* PRODUCTS: DETAILS */
+#product h1
+{
+    font-family: "Libre Baskerville", serif;
+    text-transform: lowercase;
+    letter-spacing: 2px;
+    font-weight: 400;
+}
+
+#product .product-prices span
+{
+    font-family: "Libre Baskerville", serif;
+    font-size: 2rem;
+    font-weight: 300;
+    color: #88AEDD;
+}
+
+#product .product-variants span, #product .product-add-to-cart .control-label
+{
+    text-transform: lowercase;
+    font-family: "Libre Baskerville", serif;
+    font-weight: 300;
+    font-style: italic;
+}
+
+#product .product-variants select, #product .product-add-to-cart #quantity_wanted
+{
+    border: 2px solid #EFD5F6;
+    border-radius: 5px;
+    box-shadow: none;
+}
+
+#product .btn-touchspin
+{
+    border: none;
+}
+
+#product .bootstrap-touchspin
+{
+    box-shadow: none;
+}
+
+#product .add .add-to-cart
+{
+    background-color: #F6EDF9;
+    border: 1px solid #EFD5F6;
+    letter-spacing: 3px;
+    font-weight: 400;
+    font-size: 0.8rem;
+    color: #B57CC4;
+    box-shadow: none;
+}
+
+#product .add .add-to-cart:hover
+{
+    background-color: #EFD5F6;
+}
+
+#product .add .add-to-cart:active, #product .add .add-to-cart:focus
+{
+    outline: none;
+}
+
+#product .tabs
+{
+    box-shadow: none;
+    border: 1px solid #EFD5F6;
+
+}
+
+#product .tabs .nav-tabs .nav-link.active, #product .tabs .nav-tabs .nav-link:hover
+{
+    border-bottom: 3px solid #B57CC4;
+}
+
+#product .tabs .nav-tabs .nav-link.active
+{
+    color: #B57CC4;
+}
+
+#product .tabs .nav-tabs .nav-link
+{
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+    font-weight: 400;
+}
+
+#product .tabs .product-description p
+{
+    text-align: justify;
+}
+
+/* PRODUCTS: BLOCK REASSURANCE MODULE */
+.blockreassurance_product
+{
+    margin-bottom: 80px;
+    margin-top: 110px;
+}
+
+.blockreassurance_product .item-product
+{
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-bottom: 30px;
+}
+
+.blockreassurance_product .block-title
+{
+    display: block;
+    text-align: center;
+    text-transform: lowercase;
+    font-family: "Libre Baskerville",serif;
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+    font-style: italic;
+    margin-bottom: 30px;
+}
+
+.reassurance-item-div p
+{
+    text-align: center;
+    margin-bottom: 50px;
+    letter-spacing: 1px;
+}
+
+.reassurance-item-div
+{
+    background-color: #ECF6FA;
+    border: 1px solid #EFD5F6;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+/* PRODUCTS: MODAL ADD-TO-CART */
+#product #blockcart-modal .h6
+{
+    text-transform: lowercase;
+    font-family: "Libre Baskerville",serif;
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+    font-style: italic;
+    font-weight: 400;
+    color: #343335;
+}
+
+#product #blockcart-modal .cart-content-btn .btn-secondary
+{
+    background-color: transparent;
+    box-shadow: none;
+    letter-spacing: 2px;
+    font-weight: 400;
+    font-size: 1rem;
+    color: #343335;
+}
+
+#product #blockcart-modal .cart-content-btn .btn-secondary:hover
+{
+    color: #B57CC4;
+}
+
+#product #blockcart-modal .cart-content-btn .btn-secondary:active, #product #blockcart-modal .cart-content-btn .btn-secondary:focus
+{
+    outline: none;
+}
+
+#product #blockcart-modal .cart-content-btn .btn-primary
+{
+    background-color: #F6EDF9 !important;
+    border: 1px solid #EFD5F6 !important;
+    letter-spacing: 3px;
+    font-weight: 400;
+    font-size: 0.8rem;
+    color: #B57CC4;
+    box-shadow: none;
+}
+
+#product #blockcart-modal .cart-content-btn .btn-primary:hover
+{
+    background-color: #EFD5F6 !important;
+}
+
+/* CART PAGE */
+#cart h1
+{
+    font-family: "Libre Baskerville", serif;
+    font-style: italic;
+    text-transform: lowercase;
+    letter-spacing: 2px;
+    font-weight: 400;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+#cart .cart-container, #cart .cart-summary
+{
+    box-shadow: none;
+    border: 1px solid #EFD5F6;
+}
+
+#cart .separator
+{
+    border-color: #EFD5F6;
+}
+
+#cart .cart-item .price
+{
+    font-family: "Libre Baskerville", serif;
+    font-size: 1rem;
+    font-style: italic;
+    font-weight: 300;
+    color: #B57CC4;
+}
+
+#cart .js-cart-line-product-quantity
+{
+    border: 2px solid #EFD5F6;
+    border-radius: 5px;
+    box-shadow: none;
+}
+
+#cart .btn-touchspin
+{
+    border: none;
+}
+
+#cart .bootstrap-touchspin
+{
+    box-shadow: none;
+}
+
+#cart .checkout .btn-primary
+{
+    background-color: #F6EDF9 !important;
+    border: 1px solid #EFD5F6 !important;
+    letter-spacing: 3px;
+    font-weight: 400;
+    font-size: 0.8rem;
+    color: #B57CC4;
+    box-shadow: none;
+}
+
+#cart .checkout .btn-primary:hover
+{
+    background-color: #EFD5F6 !important;
+}
+
+#cart .cart-summary-line .value
+{
+    font-family: "Libre Baskerville", serif;
+    font-size: 1rem;
+    font-style: italic;
+    font-weight: 300;
+}
+
+/* CHECKOUT PAGE */
+#checkout #checkout-personal-information-step, #checkout #js-checkout-summary, #checkout .checkout-step
+{
+    box-shadow: none !important;
+    border: 1px solid #EFD5F6 !important;
+}
+
+#checkout footer .continue
+{
+    background-color: #F6EDF9 !important;
+    border: 1px solid #EFD5F6 !important;
+    letter-spacing: 3px;
+    font-weight: 400;
+    font-size: 0.8rem;
+    color: #B57CC4;
+    box-shadow: none;
+}
+
+#checkout footer .continue:hover
+{
+    background-color: #EFD5F6 !important;
+}
+
+#checkout footer .continue:focus, #checkout footer .continue:active
+{
+    outline: none;
+}
+
+
+/* CMS PAGES */
+#cms #content img
+{
+    
+}
+
+
+/* CONTACT PAGE */
+#contact .breadcrumb
+{
+    display: none;
+}
+
+#contact #content-wrapper
+{
+    width: 100%;
+}
+
+#contact #content-wrapper #content
+{
+    box-shadow: none !important;
+    border: none;
+}
+
+#contact h3
+{
+    text-align: center;
+    margin-bottom: 50px;
+    font-family: "Libre Baskerville", Serif;
+    font-style: italic;
+    font-weight: 400;
+    text-transform: lowercase;
+    letter-spacing: 3px;
+    font-size: 2rem;
+}
+
+#contact .form-fields
+{
+    width: 60%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#contact .form-fields input, #contact .form-fields select, #contact .form-fields textarea
+{
+    background-color: #F5F5F5;
+    border: 1px solid #EAEAEA;
+}
+
+#contact .form-fields input:focus, #contact .form-fields select:focus, #contact .form-fields textarea:focus, #contact .form-fields input:active, #contact .form-fields select:active, #contact .form-fields textarea:active
+{
+    outline: 1px solid #EFD5F6;
+}
+
+#contact .contact-form .btn-primary
+{
+    background-color: #F6EDF9;
+    margin-top: 20px;
+    border: 1px solid #EFD5F6;
+    box-shadow: none;
+    letter-spacing: 3px;
+    font-weight: 500;
+    font-size: 1.2rem;
+    color: #B57CC4;
+}
+
+#contact .contact-form .btn-primary:hover
+{
+    background-color: #EFD5F6;
+}
+
+#contact .contact-form .btn-primary:focus, #contact .contact-form .btn-primary:active
+{
+    outline: none !important;
+}
+
+/* BLOCK CONTACT INFO MODULE */
+#contact .block-contact
+{
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+#contact .block-contact-title
+{
+    text-transform: lowercase;
+    margin-bottom: 30px;
+    font-family: "Libre Baskerville", Serif;
+    color: #343335;
+    font-size: 1.5rem;
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: 3px;
+}
+
+
 /* FOOTER 1: NEWSLETTER & SOCIAL MEDIA */
 .row-footer
 {
@@ -505,6 +878,7 @@ h2
 #block-newsletter-label
  {
      text-align: center;
+     line-height: 30px;
      text-transform: lowercase;
      font-style: italic;
      font-family: "Libre Baskerville", Serif;
@@ -517,24 +891,22 @@ h2
 
 .block_newsletter form input[type=email]
 {
-    border: 2px solid #EFD5F6;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
+    border: 1px solid #EFD5F6;
 }
 
 .block_newsletter .btn-primary
 {
-    background-color: #88AEDD;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
+    background-color: #F6EDF9;
+    border: 1px solid #EFD5F6;
     letter-spacing: 3px;
     font-weight: 400;
     font-size: 0.8rem;
+    color: #B57CC4;
 }
 
 .block_newsletter .btn-primary:hover
 {
-    background-color: #6A96CB;
+    background-color: #EFD5F6;
 }
 
 .block_newsletter p
@@ -623,7 +995,7 @@ h2
 }
 
 
-/* FOOTER 2: LINKS */
+/* FOOTER 2: LINKS + DISPLAY HOURS MODULE */
 .footer-container
 {
     background-color: #F6EDF9;
@@ -643,7 +1015,7 @@ h2
 
 .footer-container li a:hover
 {
-    color: #88AEDD;
+    color: #B57CC4;
 }
 
 .footer-container .container-fluid
@@ -663,7 +1035,7 @@ h2
 .footer-container .copyright-bg
 {
     padding: 20px;
-    background-color: #CFEBF7;
+    background-color: #E6C7EF;
 }
 
 .footer-container .copyright-bg p
@@ -674,10 +1046,49 @@ h2
 
 .footer-container .copyright-bg a
 {
-    color: #343335;
+    color: black !important;
 }
 
 .footer-container .container-footer-links
 {
     margin-bottom: 60px;
+}
+
+#display-hours .display-hours-title
+{
+    margin-bottom: 30px !important;
+    font-weight: 600 !important;
+    letter-spacing: 3px !important;
+    color: #B57CC4 !important;
+    font-size: 1.2rem !important;
+    text-transform: uppercase;
+}
+
+#display-hours .display-hours-number
+{
+    color: #343335;
+    font-size: 1.2rem;
+    font-family: "Libre Baskerville", serif;
+}
+
+#display-hours .display-hours-info
+{
+    text-transform: lowercase;
+    font-family: "Libre Baskerville",Serif;
+    color: #343335;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    font-weight: 300;
+}
+
+@media (max-width: 768px)
+{
+    #display-hours .display-hours-title, #display-hours .display-hours-info, #display-hours .display-hours-number
+    {
+        text-align: center;
+    }
+    #display-hours .display-hours-title
+    {
+        margin-top: 30px;
+    }
 }

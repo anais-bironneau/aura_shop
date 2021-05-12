@@ -22,39 +22,21 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
-{extends file=$layout}
-
-{block name='content'}
-
-  <section id="main">
-
-    {block name='page_header_container'}
-      {block name='page_title' hide}
-        <header class="page-header">
-          <h1>{$smarty.block.child}</h1>
-        </header>
-      {/block}
-    {/block}
-
-    {block name='page_content_container'}
-      <section id="content" class="page-content card card-block">
-        {block name='page_content_top'}{/block}
-        {block name='page_content'}
-          <!-- Page content -->
-        {/block}
-      </section>
-    {/block}
-
-
-
-    {block name='page_footer_container'}
-      <footer class="page-footer">
-        {block name='page_footer'}
-          <!-- Footer content -->
-        {/block}
-      </footer>
-    {/block}
-
-  </section>
-
-{/block}
+<div id="_desktop_contact_link">
+  <div id="contact-link">
+    {if $contact_infos.phone}
+      {* [1][/1] is for a HTML tag. *}
+      {l
+        s='Call us: [1]%phone%[/1]'
+        sprintf=[
+          '[1]' => '<span>',
+          '[/1]' => '</span>',
+          '%phone%' => $contact_infos.phone
+        ]
+        d='Shop.Theme.Global'
+      }
+    {else}
+      <a href="{$urls.pages.contact}">{l s='Contact us' d='Shop.Theme.Global'}</a>
+    {/if}
+  </div>
+</div>

@@ -1,0 +1,328 @@
+/* SKIN QUIZ MODULE */
+/* MODULE CALL IN HOMEPAGE & PRODUCTS */
+#skin_quiz_call
+{
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+.page-home #skin_quiz_call
+{
+    margin-top: 400px;
+    margin-bottom: 100px;
+}
+
+@media (max-width: 1700px)
+{
+    .page-home #skin_quiz_call
+    {
+        margin-top: 330px;
+    }
+}
+@media (max-width: 991px)
+{
+    .page-home #skin_quiz_call
+    {
+        margin-top: 400px;
+    }
+}
+@media (max-width: 450px)
+{
+    .page-home #skin_quiz_call
+    {
+        margin-top: 20px;
+    }
+}
+
+.skin-quiz-bg
+{
+    background-color: #EFD5F6;
+    background-image: url("../img/bg8.jpeg");
+    background-size: cover;
+    padding: 100px 100px;
+}
+
+.page-home .skin-quiz-bg
+{
+    padding: 200px 200px;
+}
+
+.skin-quiz-title, .skin-quiz-text
+{
+    text-align: center;
+    font-family: "Libre Baskerville", Serif;
+    color: black;
+    letter-spacing: 3px;
+    text-transform: lowercase;
+}
+
+.skin-quiz-title
+{
+    font-size: 2.2rem;
+    margin-bottom: 150px;
+    line-height: 50px;
+}
+
+.skin-quiz-text
+{
+    font-size: 1.5rem;
+    font-style: italic;
+    line-height: 30px;
+    margin-bottom: 60px;
+}
+
+#skin_quiz_call .btn
+{
+    background-color: white;
+    border-radius: 3px;
+    padding: 20px;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    font-weight: 400;
+    color: #343335;
+}
+
+.page-home #skin_quiz_call .btn
+{
+    padding: 30px;
+    font-size: 1.5rem;
+}
+
+#skin_quiz_call .btn:hover
+{
+    background-color: #F8F1F8;
+}
+
+@media (max-width: 1200px)
+{
+    #skin_quiz_call .btn:first-of-type
+    {
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 992px)
+{
+    .skin-quiz-bg
+    {
+        padding: 100px 100px !important;
+    }
+}
+
+@media (max-width: 768px)
+{
+    .skin-quiz-title
+    {
+        font-size: 2rem !important;
+    }
+    #skin_quiz_call .btn
+    {
+        padding: 30px !important;
+        font-size: 1rem !important;
+    }
+}
+@media (max-width: 550px)
+{
+    .skin-quiz-bg
+    {
+        padding: 50px 50px !important;
+    }
+}
+
+@media (max-width: 465px)
+{
+    .skin-quiz-title
+    {
+        font-size: 1.8rem !important;
+        margin-bottom: 80px !important;
+    }
+    .skin-quiz-text
+    {
+        font-size: 1.2rem !important;
+    }
+}
+
+@media (max-width: 400px)
+{
+    #skin_quiz_call .btn
+    {
+        padding: 10px !important;
+        font-size: 1rem !important;
+    }
+    .skin-quiz-bg
+    {
+        padding: 20px 20px !important;
+    }
+}
+
+/* QUIZ PAGES */
+.quiz-page-bg
+{
+    background-color: #EFD5F6;
+    background-image: url("../img/bg8.jpeg");
+    background-size: cover;
+    padding: 100px;
+}
+@media (max-width: 650px)
+{
+    .quiz-page-bg
+    {
+        padding: 50px;
+    }
+}
+
+.quiz-page-bg h1
+{
+    text-align: center;
+    font-family: "Libre Baskerville", Serif;
+    font-weight: 400;
+    color: black;
+    font-style: italic;
+    font-size: 2.5rem;
+    letter-spacing: 3px;
+    text-transform: lowercase;
+    margin-bottom: 0;
+}
+@media (max-width: 992px)
+{
+    .quiz-page-bg h1
+    {
+        font-size: 1.8rem;
+    }
+}
+@media (max-width: 450px)
+{
+    .quiz-page-bg h1
+    {
+        font-size: 1.5rem;
+    }
+}
+
+.quiz-form
+{
+    margin-top: 80px;
+    text-align: center;
+}
+
+.quiz-form .form-check-label
+{
+    padding-left: 0 !important;
+}
+
+.quiz-form fieldset
+{
+    margin-bottom: 60px;
+}
+
+.quiz-form legend
+{
+    margin-bottom: 50px;
+    letter-spacing: 1.5px;
+    line-height: 30px;
+}
+@media (max-width: 450px)
+{
+    .quiz-form legend
+    {
+        font-size: 1.2rem;
+    }
+}
+
+.quiz-form input[type="radio"]
+{
+    opacity: 0;
+    position: fixed;
+    width: 0;
+}
+
+.quiz-form label
+{
+    background-color: #EFD5F6;
+    border-radius: 3px;
+    padding: 30px;
+    margin-right: 5px;
+    margin-left: 5px;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: lowercase;
+    letter-spacing: 1.5px;
+    color: black;
+}
+
+.quiz-form input[type="radio"]:hover + label
+{
+    background-color: #E6C7EF !important;
+}
+
+.quiz-form input[type="radio"]:checked + label
+{
+    background-color: #D79FE8 !important;
+}
+
+.quiz-form .quiz-btn
+{
+    background-color: transparent;
+    border: none;
+    color: #D79FE8;
+    box-shadow: none;
+    font-weight: 500;
+    font-size: 2rem;
+    letter-spacing: 2px;
+}
+@media (max-width: 650px)
+{
+    .quiz-form .quiz-btn
+    {
+        font-size: 1.5rem;
+    }
+}
+@media (max-width: 450px)
+{
+    .quiz-form .quiz-btn
+    {
+        font-size: 1.1rem;
+    }
+}
+
+.quiz-form .quiz-btn:hover
+{
+    color: #D091FF !important;
+    text-decoration: underline;
+}
+
+.quiz-form .quiz-btn:focus, .quiz-form .quiz-btn:active
+{
+    outline: none !important;
+    background-color: transparent !important;
+}
+
+/* QUIZ RESULTS */
+#module-ab_skinquiz-skintype_quiz .result-title, #module-ab_skinquiz-hairtype_quiz .result-title
+{
+    margin-top: 80px;
+    margin-bottom: 80px;
+    font-style: italic;
+    text-align: center;
+    text-transform: lowercase;
+    font-family: "Libre Baskerville", 'serif';
+    font-size: 1.8rem;
+    color: #343335;
+    font-weight: 200;
+    letter-spacing: 2px;
+}
+#module-ab_skinquiz-skintype_quiz .result-title span, #module-ab_skinquiz-hairtype_quiz .result-title span
+{
+    color: #B57CC4;
+}
+
+#module-ab_skinquiz-skintype_quiz .result-description, #module-ab_skinquiz-hairtype_quiz .result-description
+{
+    color: #343335;
+    text-align: justify;
+    font-size: 1.2rem ;
+    letter-spacing: 1.5px;
+    line-height: 30px;
+}

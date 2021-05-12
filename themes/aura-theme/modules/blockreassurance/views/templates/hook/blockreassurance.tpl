@@ -22,39 +22,17 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
-{extends file=$layout}
-
-{block name='content'}
-
-  <section id="main">
-
-    {block name='page_header_container'}
-      {block name='page_title' hide}
-        <header class="page-header">
-          <h1>{$smarty.block.child}</h1>
-        </header>
-      {/block}
-    {/block}
-
-    {block name='page_content_container'}
-      <section id="content" class="page-content card card-block">
-        {block name='page_content_top'}{/block}
-        {block name='page_content'}
-          <!-- Page content -->
-        {/block}
-      </section>
-    {/block}
-
-
-
-    {block name='page_footer_container'}
-      <footer class="page-footer">
-        {block name='page_footer'}
-          <!-- Footer content -->
-        {/block}
-      </footer>
-    {/block}
-
-  </section>
-
-{/block}
+{if $elements}
+  <div id="block-reassurance">
+    <ul>
+      {foreach from=$elements item=element}
+        <li>
+          <div class="block-reassurance-item">
+            <img src="{$element.image}" alt="{$element.text}">
+            <span class="h6">{$element.text}</span>
+          </div>
+        </li>
+      {/foreach}
+    </ul>
+  </div>
+{/if}

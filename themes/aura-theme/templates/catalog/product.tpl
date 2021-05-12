@@ -77,20 +77,20 @@
               <h1 class="h1" itemprop="name">{block name='page_title'}{$product.name}{/block}</h1>
             {/block}
           {/block}
-          {block name='product_prices'}
-            {include file='catalog/_partials/product-prices.tpl'}
-          {/block}
+
+
 
           <div class="product-information">
-            {block name='product_description_short'}
-              <div id="product-description-short-{$product.id}" class="product-description" itemprop="description">{$product.description_short nofilter}</div>
-            {/block}
+
+
 
             {if $product.is_customizable && count($product.customizations.fields)}
               {block name='product_customization'}
                 {include file="catalog/_partials/product-customization.tpl" customizations=$product.customizations}
               {/block}
             {/if}
+
+
 
             <div class="product-actions">
               {block name='product_buy'}
@@ -102,6 +102,12 @@
                   {block name='product_variants'}
                     {include file='catalog/_partials/product-variants.tpl'}
                   {/block}
+
+
+                    {block name='product_prices'}
+                        {include file='catalog/_partials/product-prices.tpl'}
+                    {/block}
+
 
                   {block name='product_pack'}
                     {if $packItems}
@@ -124,9 +130,6 @@
                     {include file='catalog/_partials/product-add-to-cart.tpl'}
                   {/block}
 
-                  {block name='product_additional_info'}
-                    {include file='catalog/_partials/product-additional-info.tpl'}
-                  {/block}
 
                   {* Input to refresh product HTML removed, block kept for compatibility with themes *}
                   {block name='product_refresh'}{/block}
@@ -135,9 +138,7 @@
 
             </div>
 
-            {block name='hook_display_reassurance'}
-              {hook h='displayReassurance'}
-            {/block}
+
 
             {block name='product_tabs'}
               <div class="tabs">
@@ -222,6 +223,8 @@
               </div>
             </div>
           {/block}
+            
+
         </div>
       </div>
     </div>
@@ -240,6 +243,10 @@
         </section>
       {/if}
     {/block}
+
+      {block name='hook_display_reassurance'}
+          {hook h='displayReassurance'}
+      {/block}
 
     {block name='product_footer'}
       {hook h='displayFooterProduct' product=$product category=$category}
