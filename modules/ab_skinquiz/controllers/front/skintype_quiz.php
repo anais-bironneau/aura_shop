@@ -122,18 +122,52 @@ class Ab_SkinQuizSkinType_QuizModuleFrontController extends ModuleFrontControlle
             $drySkinResult = Db::getInstance()->executeS('SELECT *  FROM '._DB_PREFIX_.'skin_quiz_results WHERE id_skin_quiz_results = 5');
 
 
+            $id_category = 0;
+
+            if ($higherScore === $dryScore)
+            {
+                $id_category = 33;
+
+            } elseif ($higherScore === $oilyScore)
+            {
+                $id_category = 34;
+
+            } elseif ($higherScore === $combinationScore)
+            {
+                $id_category = 35;
+
+            } elseif ($higherScore === $sensitiveScore)
+            {
+                $id_category = 36;
+
+            } elseif ($higherScore === $normalScore)
+            {
+                $id_category = 37;
+            }
 
 
 
-            // TEST: trying to fetch products to display them
-            $products = Product::getProducts($this->context->language->id, 0, 100, 'price', 'asc');
+            $category = new Category($id_category,$this->context->language->id);
+            $products = $category->getProducts(2, 1, 100, 'price', 'asc');
 
-            $products_all = Product::getProductsProperties($this->context->language->id, $products);
 
-            var_dump($products_all);
+            for ($i = 0; $i < count($products); $i++)
+            {
+                $products[$i]['url'] = $products[$i]['link'];
+                $products[$i]['has_discount'] = Product::isDiscounted($products[$i]['id_product']);
+                $products[$i]['price_amount'] = $products[$i]['orderprice'];
+                $products[$i]['id'] = $products[$i]['id_product'];
+                $products[$i]['cover'] = $this->context->link->getImageLink($products[$i]['link_rewrite'], $products[$i]['cover_image_id'],'home_default');
+
+            }
+
+
+
+            $isPageQuizResult = true;
 
             $this->context->smarty->assign(array(
-                'products' => $products_all
+                'products' => $products,
+                'isPageQuizResult' => $isPageQuizResult
             ));
 
 

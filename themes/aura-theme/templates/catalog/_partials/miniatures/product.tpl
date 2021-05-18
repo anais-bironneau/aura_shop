@@ -31,9 +31,19 @@
         {if $product.cover}
           <a href="{$product.url}" class="thumbnail product-thumbnail">
             <img
-              src="{$product.cover.bySize.home_default.url}"
+              src="
+                {if isset($isPageQuizResult) && $isPageQuizResult}
+                    {$product.cover}
+                {else}
+                    {$product.cover.bySize.home_default.url}
+                {/if}"
               alt="{if !empty($product.cover.legend)}{$product.cover.legend}{else}{$product.name|truncate:30:'...'}{/if}"
-              data-full-size-image-url="{$product.cover.large.url}"
+              data-full-size-image-url="
+                {if isset($isPageQuizResult) && $isPageQuizResult}
+                    {$product.cover}
+                {else}
+                    {$product.cover.large.url}
+                {/if}"
               />
           </a>
         {else}
@@ -51,6 +61,8 @@
             <h2 class="h3 product-title" itemprop="name"><a href="{$product.url}" itemprop="url" content="{$product.url}">{$product.name|truncate:30:'...'}</a></h2>
           {/if}
         {/block}
+
+      {if !isset($isPageQuizResult) || !$isPageQuizResult}
 
         {block name='product_price_and_shipping'}
           {if $product.show_price}
@@ -86,22 +98,29 @@
         {/block}
       </div>
 
-      {include file='catalog/_partials/product-flags.tpl'}
+        {include file='catalog/_partials/product-flags.tpl'}
 
-      <div class="highlighted-informations{if !$product.main_variants} no-variants{/if} hidden-sm-down">
-        {block name='quick_view'}
-          <a class="quick-view" href="#" data-link-action="quickview">
-            <i class="material-icons search">&#xE8B6;</i> {l s='Quick view' d='Shop.Theme.Actions'}
-          </a>
-        {/block}
+    {/if}
 
-        {block name='product_variants'}
-          {if $product.main_variants}
-            {include file='catalog/_partials/variant-links.tpl' variants=$product.main_variants}
-          {/if}
-        {/block}
-      </div>
+        {if !isset($isPageQuizResult) || !$isPageQuizResult}
+
+            <div class="highlighted-informations{if !$product.main_variants} no-variants{/if} hidden-sm-down">
+                {block name='quick_view'}
+                    <a class="quick-view" href="#" data-link-action="quickview">
+                        <i class="material-icons search">&#xE8B6;</i> {l s='Quick view' d='Shop.Theme.Actions'}
+                    </a>
+                {/block}
+
+                {block name='product_variants'}
+                    {if $product.main_variants}
+                        {include file='catalog/_partials/variant-links.tpl' variants=$product.main_variants}
+                    {/if}
+                {/block}
+            </div>
+        {/if}
     </div>
+
+
   </article>
 </div>
 {/block}

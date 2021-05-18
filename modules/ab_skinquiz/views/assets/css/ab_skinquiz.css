@@ -326,3 +326,27 @@
     letter-spacing: 1.5px;
     line-height: 30px;
 }
+
+#module-ab_skinquiz-skintype_quiz .thumbnail-container, #module-ab_skinquiz-hairtype_quiz .thumbnail-container
+{
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: none;
+}
+
+#module-ab_skinquiz-skintype_quiz .product-title a, #module-ab_skinquiz-hairtype_quiz .product-title a
+{
+    font-family: "Libre Baskerville", serif;
+    font-style: italic;
+    text-transform: lowercase;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    color: #343335;
+}
+
+#module-ab_skinquiz-skintype_quiz .product-title a:hover, #module-ab_skinquiz-hairtype_quiz .product-title a:hover
+{
+    color: #B57CC4;
+}
+
+

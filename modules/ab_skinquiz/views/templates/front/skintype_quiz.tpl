@@ -73,47 +73,78 @@
 
                             <p class="result-title">{l s='You have' mod='ab_skinquiz'}
                                 <span>{$drySkinTitle}</span></p>
-
                             <p class="result-description">{$drySkinDescription}</p>
-
+                            <p class="result-title">{l s='We recommend' mod='ab_skinquiz'}</p>
 
 
                             <div class="products{if !empty($cssClass)} {$cssClass}{/if}" itemscope itemtype="http://schema.org/ItemList">
                                 {foreach from=$products item="product" key="position"}
-                                    {include file="catalog/_partials/miniatures/product.tpl" product=$product position=$position}
+                                    <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                                        {include file="catalog/_partials/miniatures/product.tpl" product=$product position=$position}
+                                    </div>
                                 {/foreach}
                             </div>
-
-
 
 
                         {elseif (isset($oilyScore) && isset($higherScore)) && ($oilyScore == $higherScore)}
 
                             <p class="result-title">{l s='You have' mod='ab_skinquiz'}
                                 <span>{$oilySkinTitle}</span></p>
-
                             <p class="result-description">{$oilySkinDescription}</p>
+                            <p class="result-title">{l s='We recommend' mod='ab_skinquiz'}</p>
+
+                            <div class="products{if !empty($cssClass)} {$cssClass}{/if}" itemscope itemtype="http://schema.org/ItemList">
+                                {foreach from=$products item="product" key="position"}
+                                    <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                                        {include file="catalog/_partials/miniatures/product.tpl" product=$product position=$position}
+                                    </div>
+                                {/foreach}
+                            </div>
 
                         {elseif (isset($combinationScore) && isset($higherScore)) && ($combinationScore == $higherScore)}
 
                             <p class="result-title">{l s='You have' mod='ab_skinquiz'}
                                 <span>{$combinationSkinTitle}</span></p>
-
                             <p class="result-description">{$combinationSkinDescription}</p>
+                            <p class="result-title">{l s='We recommend' mod='ab_skinquiz'}</p>
+
+                            <div class="products{if !empty($cssClass)} {$cssClass}{/if}" itemscope itemtype="http://schema.org/ItemList">
+                                {foreach from=$products item="product" key="position"}
+                                    <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                                        {include file="catalog/_partials/miniatures/product.tpl" product=$product position=$position}
+                                    </div>
+                                {/foreach}
+                            </div>
 
                         {elseif (isset($normalScore) && isset($higherScore)) && ($normalScore == $higherScore)}
 
                             <p class="result-title">{l s='You have' mod='ab_skinquiz'}
                                 <span>{$normalSkinTitle}</span></p>
-
                             <p class="result-description">{$normalSkinDescription}</p>
+                            <p class="result-title">{l s='We recommend' mod='ab_skinquiz'}</p>
+
+                            <div class="products{if !empty($cssClass)} {$cssClass}{/if}" itemscope itemtype="http://schema.org/ItemList">
+                                {foreach from=$products item="product" key="position"}
+                                    <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                                        {include file="catalog/_partials/miniatures/product.tpl" product=$product position=$position}
+                                    </div>
+                                {/foreach}
+                            </div>
 
                         {elseif (isset($sensitiveScore) && isset($higherScore)) && ($sensitiveScore == $higherScore)}
 
                             <p class="result-title">{l s='You have' mod='ab_skinquiz'}
                                 <span>{$sensitiveSkinTitle}</span></p>
-
                             <p class="result-description">{$sensitiveSkinDescription}</p>
+                            <p class="result-title">{l s='We recommend' mod='ab_skinquiz'}</p>
+
+                            <div class="products{if !empty($cssClass)} {$cssClass}{/if}" itemscope itemtype="http://schema.org/ItemList">
+                                {foreach from=$products item="product" key="position"}
+                                    <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                                        {include file="catalog/_partials/miniatures/product.tpl" product=$product position=$position}
+                                    </div>
+                                {/foreach}
+                            </div>
 
                         {else}
 

@@ -109,6 +109,45 @@ class Ab_SkinQuizHairType_QuizModuleFrontController extends ModuleFrontControlle
             $dryHairResult = Db::getInstance()->executeS('SELECT *  FROM '._DB_PREFIX_.'hair_quiz_results WHERE id_hair_quiz_results = 2');
 
 
+            $id_category = 0;
+
+            if ($higherScore === $dryScore)
+            {
+                $id_category = 39;
+
+            } elseif ($higherScore === $oilyScore)
+            {
+                $id_category = 40;
+
+            } elseif ($higherScore === $normalScore)
+            {
+                $id_category = 38;
+            }
+
+
+
+            $category = new Category($id_category,$this->context->language->id);
+            $products = $category->getProducts(2, 1, 100, 'price', 'asc');
+
+
+            for ($i = 0; $i < count($products); $i++)
+            {
+                $products[$i]['url'] = $products[$i]['link'];
+                $products[$i]['has_discount'] = Product::isDiscounted($products[$i]['id_product']);
+                $products[$i]['price_amount'] = $products[$i]['orderprice'];
+                $products[$i]['id'] = $products[$i]['id_product'];
+                $products[$i]['cover'] = $this->context->link->getImageLink($products[$i]['link_rewrite'], $products[$i]['cover_image_id'],'home_default');
+
+            }
+
+
+            $isPageQuizResult = true;
+
+            $this->context->smarty->assign(array(
+                'products' => $products,
+                'isPageQuizResult' => $isPageQuizResult
+            ));
+
 
             $this->context->smarty->assign(array(
                 'isQuizSubmitted' => $isQuizSubmitted,
