@@ -4,25 +4,23 @@ class AdminSkinQuizQuestionsController extends ModuleAdminController
 {
     public function __construct(){
 
-        $this->table = 'skin_quiz_questions'; //nom de la table sans prefix
-        $this->className = 'SkinQuizQuestions'; //nom de ma classe du module
+        $this->table = 'skin_quiz_questions';
+        $this->className = 'SkinQuizQuestions';
 
-        parent::__construct(); //appel du constructeur parent pour pouvoir gérer les traductions
+        parent::__construct();
 
         $this->fields_list = array(
             'id_skin_quiz_questions' => [
-                'title' => $this->l('ID') //nom de ma colonne
+                'title' => $this->l('ID')
             ],
             'question' => [
                 'title' => $this->l('Question')
             ]
         );
 
-        //fields_list : afficher les champs de ma base de données sous forme de tableau
 
         $this->bootstrap = true;
 
-        //ajout des boutons d'action
         $this->addRowAction('edit');
         $this->addRowAction('delete');
         $this->addRowAction('view');
@@ -30,7 +28,6 @@ class AdminSkinQuizQuestionsController extends ModuleAdminController
 
     }
 
-    // méthode pour le formulaire d'edition
     public function renderForm(){
 
 
@@ -51,12 +48,9 @@ class AdminSkinQuizQuestionsController extends ModuleAdminController
             ]
         );
 
-
         return parent::renderForm();
 
     }
-
-
 
 
 }

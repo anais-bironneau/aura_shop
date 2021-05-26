@@ -7,20 +7,19 @@ class HairQuizResults extends ObjectModel {
     public $result_content;
 
 
-    // tableau de definition de ma classe
     public static  $definition = array(
-        'table' => 'hair_quiz_results', //nom de la table sans le préfixe
-        'primary' => 'id_hair_quiz_results', //clé primaire
-        'multilang' => false, //pas de champ multilangue
+        'table' => 'hair_quiz_results',
+        'primary' => 'id_hair_quiz_results',
+        'multilang' => false,
         'fields' => array(
             'result_name' => array(
-                'type' => self::TYPE_STRING, //type de donnée (string, int, date, float, bool, ...)
-                'validate' => 'isCleanHtml', //regle de validation que l'on souhaite. (optionnel)
+                'type' => self::TYPE_STRING,
+                'validate' => 'isCleanHtml',
                 'required' => true
             ),
             'result_content' => array(
-                'type' => self::TYPE_STRING, //type de donnée (string, int, date, float, bool, ...)
-                'validate' => 'isCleanHtml', //regle de validation que l'on souhaite. (optionnel)
+                'type' => self::TYPE_STRING,
+                'validate' => 'isCleanHtml',
                 'required' => true
             )
         )

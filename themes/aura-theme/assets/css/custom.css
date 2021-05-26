@@ -44,6 +44,125 @@ h2
     margin-top: 100px !important;
 }
 
+#cms .page-header h1
+{
+    display: none;
+}
+
+#cms #content img
+{
+    max-width: 100%;
+    height: auto;
+}
+
+#cms #content p
+{
+    margin-bottom: 70px;
+    text-align: justify !important;
+    font-size: 1.1rem !important;
+    letter-spacing: 1px;
+    color: #343335;
+}
+
+#cms #content h1
+{
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2.2px;
+    font-weight: 400;
+    margin-bottom: 70px;
+}
+
+#cms #content h2
+{
+    font-family: "Libre Baskerville", Serif;
+    text-transform: lowercase;
+    letter-spacing: 2px;
+    font-style: italic;
+    margin-bottom: 50px;
+    font-size: 2rem;
+    color: #B57CC4;
+}
+
+#cms #content address
+{
+    font-family: "Libre Baskerville", Serif;
+    text-transform: lowercase;
+    letter-spacing: 2px;
+    font-style: italic;
+    font-size: 1.5rem;
+    line-height: 30px;
+}
+
+#sitemap .sitemap a
+{
+    font-family: "Libre Baskerville", Serif;
+    text-transform: lowercase;
+    letter-spacing: 2px;
+    font-style: italic;
+    font-size: 1rem;
+    color: #B57CC4;
+}
+
+#sitemap .sitemap a:hover
+{
+   color: #985CA7;
+    font-weight: 800;
+}
+
+#stores article
+{
+    box-shadow: none;
+    border: 2px solid #EFD5F6;
+    border-radius: 5px;
+}
+
+#stores .h3
+{
+    font-family: "Libre Baskerville", Serif;
+    text-transform: lowercase;
+    letter-spacing: 2px;
+    font-style: italic;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #B57CC4;
+}
+
+#authentication h1
+{
+    display: none;
+}
+
+#authentication #submit-login
+{
+    background-color: #F6EDF9 !important;
+    border: 1px solid #EFD5F6;
+    letter-spacing: 3px;
+    font-weight: 400;
+    font-size: 0.8rem;
+    color: #B57CC4;
+    box-shadow: none;
+}
+
+#authentication #content
+{
+    box-shadow: none;
+}
+
+.right-nav .user-info .account span
+{
+    font-family: "Libre Baskerville",serif;
+    text-transform: lowercase;
+    font-size: 1rem;
+    font-style: italic;
+    letter-spacing: 1px;
+}
+
+.right-nav .user-info .account span:hover
+{
+    color: #B57CC4;
+}
+
 /* HEADER 1  (LOGO AND ICONS) */
 #header
 {
@@ -95,7 +214,26 @@ h2
     border-bottom: 2px solid #F6EDF9;
 }
 
+@media (max-width: 992px)
+{
+    #header .account
+    {
+        display: none;
+    }
+}
+
+
 /* HEADER 2 (MAIN MENU) */
+.header-top .container
+{
+    width: 100% !important;
+}
+.header-top .menu
+{
+    padding-left: 0 !important;
+}
+
+
 #_desktop_top_menu
 {
     margin-right: auto !important;
@@ -104,19 +242,30 @@ h2
     display: block !important;
 }
 
+
 .top-menu .sub-menu
 {
     background-color: #EFD5F6;
 }
 
-
 .top-menu a
 {
-    margin-right: 8px;
-    margin-left: 8px;
+    margin-right: 11px;
+    margin-left: 11px;
     color: #B57CC4 !important;
     letter-spacing: 4px;
+    text-align: center;
 }
+@media (max-width: 992px)
+{
+    .top-menu a
+    {
+        margin-right: 6px;
+        margin-left: 6px;
+        letter-spacing: 3px;
+    }
+}
+
 
 .top-menu a:hover
 {
@@ -148,7 +297,7 @@ h2
 {
     #header .header-top .menu
     {
-        padding-left: 0;
+        /*padding-left: 0; */
     }
     .top-menu a
     {
@@ -276,6 +425,11 @@ h2
 
 .carousel .carousel-inner {
     height: auto;
+    margin-bottom: 0;
+}
+
+.carousel .caption-description p
+{
     margin-bottom: 0;
 }
 
@@ -866,6 +1020,111 @@ h2
     font-weight: 400;
     letter-spacing: 3px;
 }
+
+
+/* USER : MY ACCOUNT */
+#my-account .links .link-item
+{
+    box-shadow: none !important;
+    border: 2px solid #EFD5F6;
+    border-radius: 5px;
+    font-family: "Libre Baskerville",serif;
+    text-transform: lowercase;
+    font-style: italic;
+    color: #343335;
+    font-weight: 400;
+    font-size: 1.1rem;
+}
+
+#my-account .links .link-item .material-icons
+{
+    color: #B57CC4;
+}
+
+#my-account .links .link-item .material-icons:hover
+{
+    color: #88AEDD;
+}
+
+#identity .page-header h1, #address .page-header h1, #addresses .page-header h1, #history .page-header h1, #order-slip .page-header h1, #module-psgdpr-gdpr .page-header h1
+{
+    text-align: center;
+    font-family: "Libre Baskerville",serif;
+    letter-spacing: 2px;
+    text-transform: lowercase;
+    font-style: italic;
+    color: #B57CC4;
+    font-weight: 400;
+    font-size: 2rem;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#addresses #content article
+{
+    border: 2px solid #EFD5F6;
+    border-radius: 5px;
+}
+
+#addresses .address .address-footer
+{
+    border-top: none;
+}
+
+#identity #content, #address #content, #addresses #content article, #history #content, #order-slip #content, #module-psgdpr-gdpr #content
+{
+    box-shadow: none !important;
+}
+
+#identity .form-footer .btn-primary, #address .form-footer .btn-primary, #module-psgdpr-gdpr #content .btn-primary
+{
+    background-color: #F6EDF9;
+    border: 1px solid #EFD5F6;
+    letter-spacing: 3px;
+    font-weight: 400;
+    font-size: 0.8rem;
+    color: #B57CC4;
+    box-shadow: none;
+}
+
+#identity .form-footer .btn-primary:hover, #address .form-footer .btn-primary:hover, #module-psgdpr-gdpr #content .btn-primary:hover
+{
+    background-color: #EFD5F6;
+}
+
+#identity .form-footer .btn-primary:focus, #identity .form-footer .btn-primary:active, #address .form-footer .btn-primary:focus, #address .form-footer .btn-primary:active, #module-psgdpr-gdpr #content .btn-primary:focus, #module-psgdpr-gdpr #content .btn-primary:active
+{
+    outline: none !important;
+}
+
+/* USER : GDPR MODULE */
+#module-psgdpr-gdpr #content .psgdprinfo17
+{
+    border: 2px solid #EFD5F6;
+    border-radius: 5px;
+    background-color: transparent;
+}
+
+#module-psgdpr-gdpr #content h2
+{
+    font-family: "Libre Baskerville", serif;
+    text-transform: lowercase;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.4rem;
+    color: #343335;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+#module-psgdpr-gdpr #content p
+{
+    color: #343335;
+}
+
+
+
+
 
 
 /* FOOTER 1: NEWSLETTER & SOCIAL MEDIA */

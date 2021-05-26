@@ -109,6 +109,7 @@ class Ab_SkinQuizHairType_QuizModuleFrontController extends ModuleFrontControlle
             $dryHairResult = Db::getInstance()->executeS('SELECT *  FROM '._DB_PREFIX_.'hair_quiz_results WHERE id_hair_quiz_results = 2');
 
 
+            // defining the categories we need
             $id_category = 0;
 
             if ($higherScore === $dryScore)
@@ -125,11 +126,11 @@ class Ab_SkinQuizHairType_QuizModuleFrontController extends ModuleFrontControlle
             }
 
 
-
+            // get all the categories data we need to display advised products later
             $category = new Category($id_category,$this->context->language->id);
-            $products = $category->getProducts(2, 1, 100, 'price', 'asc');
+            $products = $category->getProducts($this->context->language->id, 1, 100, 'price', 'asc');
 
-
+            // manually adding attributes that arent present in the objects retrieved, because tpl template (same as vanilla) needs them and we dont have any other choice
             for ($i = 0; $i < count($products); $i++)
             {
                 $products[$i]['url'] = $products[$i]['link'];
@@ -143,15 +144,13 @@ class Ab_SkinQuizHairType_QuizModuleFrontController extends ModuleFrontControlle
 
             $isPageQuizResult = true;
 
-            $this->context->smarty->assign(array(
-                'products' => $products,
-                'isPageQuizResult' => $isPageQuizResult
-            ));
-
 
             $this->context->smarty->assign(array(
                 'isQuizSubmitted' => $isQuizSubmitted,
                 'data' => $data,
+                'products' => $products,
+                'isPageQuizResult' => $isPageQuizResult,
+
 
                 'dryScore' => $dryScore,
                 'oilyScore' => $oilyScore,

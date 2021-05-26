@@ -136,7 +136,6 @@ class Ab_DisplayHours extends Module
 
     public function hookDisplayFooter()
     {
-
         $displayHours = Configuration::get('DISPLAY_HOURS');
         $hotlineNumber = Configuration::get('HOTLINE_NUMBER');
         $daysHotline = Configuration::get('DAYS_HOTLINE');
@@ -154,5 +153,16 @@ class Ab_DisplayHours extends Module
         ));
 
         return $this->display(__FILE__, 'ab_displayhours.tpl');
+    }
+
+    public function uninstall() {
+
+        Configuration::deleteByName('DISPLAY_HOURS');
+        Configuration::deleteByName('HOTLINE_NUMBER');
+        Configuration::deleteByName('DAYS_HOTLINE');
+        Configuration::deleteByName('HOTLINE_OPENING_TIME');
+        Configuration::deleteByName('HOTLINE_CLOSING_TIME');
+
+        return parent::uninstall();
     }
 }

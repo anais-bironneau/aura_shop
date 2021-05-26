@@ -11,35 +11,34 @@ class AdminSkinQuizAnswersController extends ModuleAdminController
 
         $this->fields_list = array(
             'id_skin_quiz_answers' => [
-                'title' => $this->l('ID Answer') //nom de ma colonne
+                'title' => $this->l('ID Answer')
             ],
             'id_skin_quiz_questions' => [
-                'title' => $this->l('ID Question') //nom de ma colonne
+                'title' => $this->l('ID Question')
             ],
             'answer' => [
-                'title' => $this->l('Answer') //nom de ma colonne
+                'title' => $this->l('Answer')
             ],
             'isDry' => [
-                'title' => $this->l('Dry skin') //nom de ma colonne
+                'title' => $this->l('Dry skin')
             ],
             'isOily' => [
-                'title' => $this->l('Oily skin') //nom de ma colonne
+                'title' => $this->l('Oily skin')
             ],
             'isCombination' => [
-                'title' => $this->l('Combination skin') //nom de ma colonne
+                'title' => $this->l('Combination skin')
             ],
             'isNormal' => [
-                'title' => $this->l('Normal skin') //nom de ma colonne
+                'title' => $this->l('Normal skin')
             ],
             'isSensitive' => [
-                'title' => $this->l('Sensitive skin') //nom de ma colonne
+                'title' => $this->l('Sensitive skin')
             ],
         );
 
 
         $this->bootstrap = true;
 
-        //ajout des boutons d'action
         $this->addRowAction('edit');
         $this->addRowAction('delete');
         $this->addRowAction('view');
@@ -47,7 +46,6 @@ class AdminSkinQuizAnswersController extends ModuleAdminController
 
     }
 
-    // méthode pour le formulaire d'edition
     public function renderForm(){
 
         $questionsData = Db::getInstance()->executeS('SELECT id_skin_quiz_questions FROM '._DB_PREFIX_.'skin_quiz_questions');

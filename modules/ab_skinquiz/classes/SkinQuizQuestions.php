@@ -6,15 +6,14 @@ class SkinQuizQuestions extends ObjectModel {
     public $question;
 
 
-    // tableau de definition de ma classe
     public static  $definition = array(
-        'table' => 'skin_quiz_questions', //nom de la table sans le préfixe
-        'primary' => 'id_skin_quiz_questions', //clé primaire
-        'multilang' => false, //pas de champ multilangue
-        'fields' => array( //champs en plus de la clé primaire
+        'table' => 'skin_quiz_questions',
+        'primary' => 'id_skin_quiz_questions',
+        'multilang' => false,
+        'fields' => array(
             'question' => array(
-                'type' => self::TYPE_STRING, //type de donnée (string, int, date, float, bool, ...)
-                'validate' => 'isCleanHtml', //regle de validation que l'on souhaite. (optionnel)
+                'type' => self::TYPE_STRING,
+                'validate' => 'isCleanHtml',
                 'required' => true
             )
         )

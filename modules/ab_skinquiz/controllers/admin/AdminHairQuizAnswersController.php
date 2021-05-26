@@ -11,37 +11,34 @@ class AdminHairQuizAnswersController extends ModuleAdminController
 
         $this->fields_list = array(
             'id_hair_quiz_answers' => [
-                'title' => $this->l('ID Answer') //nom de ma colonne
+                'title' => $this->l('ID Answer')
             ],
             'id_hair_quiz_questions' => [
-                'title' => $this->l('ID Question') //nom de ma colonne
+                'title' => $this->l('ID Question')
             ],
             'answer' => [
-                'title' => $this->l('Answer') //nom de ma colonne
+                'title' => $this->l('Answer')
             ],
             'isDry' => [
-                'title' => $this->l('Dry skin') //nom de ma colonne
+                'title' => $this->l('Dry skin')
             ],
             'isOily' => [
-                'title' => $this->l('Oily skin') //nom de ma colonne
+                'title' => $this->l('Oily skin')
             ],
             'isNormal' => [
-                'title' => $this->l('Normal skin') //nom de ma colonne
+                'title' => $this->l('Normal skin')
             ],
         );
 
 
         $this->bootstrap = true;
 
-        //ajout des boutons d'action
         $this->addRowAction('edit');
         $this->addRowAction('delete');
         $this->addRowAction('view');
 
-
     }
 
-    // méthode pour le formulaire d'edition
     public function renderForm(){
 
         $questionsData = Db::getInstance()->executeS('SELECT id_hair_quiz_questions FROM '._DB_PREFIX_.'hair_quiz_questions');

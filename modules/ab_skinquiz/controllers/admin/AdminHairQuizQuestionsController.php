@@ -4,25 +4,23 @@ class AdminHairQuizQuestionsController extends ModuleAdminController
 {
     public function __construct(){
 
-        $this->table = 'hair_quiz_questions'; //nom de la table sans prefix
-        $this->className = 'HairQuizQuestions'; //nom de ma classe du module
+        $this->table = 'hair_quiz_questions';
+        $this->className = 'HairQuizQuestions';
 
-        parent::__construct(); //appel du constructeur parent pour pouvoir gérer les traductions
+        parent::__construct();
 
         $this->fields_list = array(
             'id_hair_quiz_questions' => [
-                'title' => $this->l('ID') //nom de ma colonne
+                'title' => $this->l('ID')
             ],
             'question' => [
                 'title' => $this->l('Question')
             ]
         );
 
-        //fields_list : afficher les champs de ma base de données sous forme de tableau
 
         $this->bootstrap = true;
 
-        //ajout des boutons d'action
         $this->addRowAction('edit');
         $this->addRowAction('delete');
         $this->addRowAction('view');
@@ -30,7 +28,6 @@ class AdminHairQuizQuestionsController extends ModuleAdminController
 
     }
 
-    // méthode pour le formulaire d'edition
     public function renderForm(){
 
 
