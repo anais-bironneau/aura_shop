@@ -1,9 +1,7 @@
 <?php
 
-require_once(_PS_ROOT_DIR_.'/modules/ab_skinquiz/classes/SkinQuiz.php');
 require_once(_PS_ROOT_DIR_.'/modules/ab_skinquiz/classes/SkinQuizQuestions.php');
 require_once(_PS_ROOT_DIR_.'/modules/ab_skinquiz/classes/SkinQuizAnswers.php');
-require_once(_PS_ROOT_DIR_.'/modules/ab_skinquiz/classes/SkinQuizResults.php');
 
 class Ab_SkinQuizSkinType_QuizModuleFrontController extends ModuleFrontController {
 

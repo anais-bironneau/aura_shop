@@ -2,10 +2,8 @@
 
 require_once(_PS_ROOT_DIR_.'/modules/ab_skinquiz/classes/SkinQuizQuestions.php');
 require_once(_PS_ROOT_DIR_.'/modules/ab_skinquiz/classes/SkinQuizAnswers.php');
-require_once(_PS_ROOT_DIR_.'/modules/ab_skinquiz/classes/SkinQuizResults.php');
 require_once(_PS_ROOT_DIR_.'/modules/ab_skinquiz/classes/HairQuizQuestions.php');
 require_once(_PS_ROOT_DIR_.'/modules/ab_skinquiz/classes/HairQuizAnswers.php');
-require_once(_PS_ROOT_DIR_.'/modules/ab_skinquiz/classes/HairQuizResults.php');
 
 class Ab_SkinQuiz extends Module
 {

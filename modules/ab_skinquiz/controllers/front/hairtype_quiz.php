@@ -2,7 +2,6 @@
 
 require_once(_PS_ROOT_DIR_.'/modules/ab_skinquiz/classes/HairQuizQuestions.php');
 require_once(_PS_ROOT_DIR_.'/modules/ab_skinquiz/classes/HairQuizAnswers.php');
-require_once(_PS_ROOT_DIR_.'/modules/ab_skinquiz/classes/HairQuizResults.php');
 
 class Ab_SkinQuizHairType_QuizModuleFrontController extends ModuleFrontController {
 
