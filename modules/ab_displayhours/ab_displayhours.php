@@ -21,9 +21,7 @@ class Ab_DisplayHours extends Module
             || !$this->registerHook('displayFooter')
         ) {
             return false;
-
         } else {
-
             return true;
         }
     }
@@ -142,8 +140,6 @@ class Ab_DisplayHours extends Module
         $hotlineOpeningTime = Configuration::get('HOTLINE_OPENING_TIME');
         $hotlineClosingTime = Configuration::get('HOTLINE_CLOSING_TIME');
 
-        // no need to declare a new Object smarty in prestashop!
-        // we call one using "context" like the example below
         $this->context->smarty->assign(array(
             'displayHours' => $displayHours,
             'hotlineNumber' => $hotlineNumber,

@@ -39,9 +39,9 @@ class ContactFormOverride extends Contactform
                 $this->customer_thread = $this->context->controller->objectPresenter->present($cm);
             }
         }
-        // adds input field 'name' & 'topic'
-        $this->contact['name'] = html_entity_decode(Tools::getValue('name'));
 
+        // adds input field 'name'
+        $this->contact['name'] = html_entity_decode(Tools::getValue('name'));
 
         $this->contact['contacts'] = $this->getTemplateVarContact();
         $this->contact['message'] = Tools::getValue('message');
@@ -84,7 +84,7 @@ class ContactFormOverride extends Contactform
         $file_attachment = Tools::fileAttachment('fileUpload');
         $message = trim(Tools::getValue('message'));
 
-        // adds input field 'name' & 'topic'
+        // adds input field 'name'
         $name = trim(Tools::getValue('name'));
 
 
@@ -111,9 +111,6 @@ class ContactFormOverride extends Contactform
                 [],
                 'Shop.Notifications.Error'
             );
-
-
-
 
         } elseif (!Validate::isCleanHtml($name)) {     // check new name input
 

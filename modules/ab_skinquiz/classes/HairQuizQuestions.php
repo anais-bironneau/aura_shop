@@ -19,3 +19,5 @@ class HairQuizQuestions extends ObjectModel {
         )
     );
 }
+
+

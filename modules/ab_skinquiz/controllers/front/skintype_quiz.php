@@ -2,6 +2,7 @@
 
 require_once(_PS_ROOT_DIR_.'/modules/ab_skinquiz/classes/SkinQuizQuestions.php');
 require_once(_PS_ROOT_DIR_.'/modules/ab_skinquiz/classes/SkinQuizAnswers.php');
+require_once(_PS_ROOT_DIR_.'/modules/ab_skinquiz/classes/SkinQuizResults.php');
 
 class Ab_SkinQuizSkinType_QuizModuleFrontController extends ModuleFrontController {
 
@@ -85,7 +86,6 @@ class Ab_SkinQuizSkinType_QuizModuleFrontController extends ModuleFrontControlle
                 // setting the score on each category for every answer
                 foreach($answers as $key => $item)
                 {
-
                     if ($item["isDry"] === "1")
                     {
                         $dryScore++;

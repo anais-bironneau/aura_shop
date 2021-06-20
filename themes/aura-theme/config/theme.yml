@@ -10,3 +10,4 @@ assets:
         path: assets/css/custom.css
         media: all
         priority: 1000
+

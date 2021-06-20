@@ -37,7 +37,7 @@ class AdminSkinQuizResultsController extends ModuleAdminController
 
         $this->fields_form = array(
             'legend' => [
-                'title' => $this->module->l('Adding/Modifying Skin Quiz Answers')
+                'title' => $this->module->l('Adding/Modifying Skin Quiz Results')
             ],
             'input' => [
                 array(
