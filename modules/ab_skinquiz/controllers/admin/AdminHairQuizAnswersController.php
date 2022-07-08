@@ -55,7 +55,7 @@ class AdminHairQuizAnswersController extends ModuleAdminController
                     array(
                         'id_option' => $item,
                         'name' => 'Question '.$item.' '
-                    ),
+                    )
                 );
             }
         }

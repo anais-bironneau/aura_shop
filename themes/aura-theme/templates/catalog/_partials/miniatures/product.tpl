@@ -62,7 +62,7 @@
           {/if}
         {/block}
 
-      {if !isset($isPageQuizResult) || !$isPageQuizResult}
+
 
         {block name='product_price_and_shipping'}
           {if $product.show_price}
@@ -80,7 +80,7 @@
 
               {hook h='displayProductPriceBlock' product=$product type="before_price"}
 
-              <span class="price" aria-label="{l s='Price' d='Shop.Theme.Catalog'}">{$product.price}</span>
+              <span class="price" aria-label="{l s='Price' d='Shop.Theme.Catalog'}">{$product.price} €</span>
               <div itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="invisible">
                 <meta itemprop="priceCurrency" content="{$currency.iso_code}" />
                 <meta itemprop="price" content="{$product.price_amount}" />
@@ -98,26 +98,22 @@
         {/block}
       </div>
 
-        {include file='catalog/_partials/product-flags.tpl'}
 
-    {/if}
 
-        {if !isset($isPageQuizResult) || !$isPageQuizResult}
 
-            <div class="highlighted-informations{if !$product.main_variants} no-variants{/if} hidden-sm-down">
+
+
+
+            <div class="highlighted-informations no-variants hidden-sm-down">
                 {block name='quick_view'}
                     <a class="quick-view" href="#" data-link-action="quickview">
                         <i class="material-icons search">&#xE8B6;</i> {l s='Quick view' d='Shop.Theme.Actions'}
                     </a>
                 {/block}
 
-                {block name='product_variants'}
-                    {if $product.main_variants}
-                        {include file='catalog/_partials/variant-links.tpl' variants=$product.main_variants}
-                    {/if}
-                {/block}
+
             </div>
-        {/if}
+
     </div>
 
 
